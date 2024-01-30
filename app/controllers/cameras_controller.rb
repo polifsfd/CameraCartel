@@ -1,4 +1,5 @@
 class CamerasController < ApplicationController
+
   before_action :set_camera, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -14,8 +15,13 @@ class CamerasController < ApplicationController
   end
 
   def create
-
-
+    @camera = Camera.new(camera_params)
+    @camera.user = current_user
+    if @camera.save
+      redirect_to camera_path(@camera)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -34,6 +40,6 @@ class CamerasController < ApplicationController
   end
 
   def camera_params
-    params.require(:camera).permit(:name, :details, :category, :price, :year, :model, :image_url)
+    params.require(:camera).permit(:name, :details, :category, :price, :year, :model, :picture_url)
   end
 end

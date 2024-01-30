@@ -12,11 +12,11 @@ Camera.destroy_all
 
 puts "Creating seeds"
 
-user = User.create!(email: "owner@mail.com", password: "123456")
+user = User.create!(email: "owner@gmail.com", password: "123456")
 
 nikon = {name: "Nikon fm2n", details: "A great film camera from the 80s", category: "Film cameras", price: 20.00, year: 1987, model: "fm2n", user: user}
 canon = {name: "Canon AE", details: "A great film camera from the 90s", category: "Film cameras", price: 20.00, year: 1982, model: "AE", user: user}
-minolta = {name: "Minolta SR", details: "A great film camera from the 80s", category: "Film cameras", price: 20.00, year: 1985, model: "SR", user: user }
+minolta = {name: "Minolta SR", details: "A great film camera from the 80s", category: "Film cameras", price: 20.00, year: 1985, model: "SR", user: user}
 
 
 [nikon, canon, minolta].each do |attributes|
