@@ -1,0 +1,10 @@
+<%= simple_form_for @camera do |f| %>
+  <%= f.input :name %>
+  <%= f.input :details %>
+  <%= f.input :category %>
+  <%= f.input :price %>
+  <%= f.input :year %>
+  <%= f.input :model %>
+  <%= f.input :photo, as: :file%>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

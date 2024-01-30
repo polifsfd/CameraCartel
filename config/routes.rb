@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get "/cameras/:id/edit", to: "cameras#edit"
 
   # Defines the root path route ("/")
+  
   # root "posts#index"
 end
