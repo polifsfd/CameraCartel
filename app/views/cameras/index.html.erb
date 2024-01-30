@@ -1,1 +1,8 @@
-<h1>Title</h1>
+<h1>All cameras</h1>
+  <ul>
+  <% @cameras.each do |camera| %>
+    <li>
+      <%= link_to camera.name, camera_path(camera) %> <br>
+    </li>
+  <% end %>
+</ul>
