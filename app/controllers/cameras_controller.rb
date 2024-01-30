@@ -1,8 +1,7 @@
 class CamerasController < ApplicationController
-
   before_action :set_camera, only: [:show, :edit, :update, :destroy]
-
-  def index
+  
+    def index
     @cameras = Camera.all
   end
 
@@ -23,14 +22,21 @@ class CamerasController < ApplicationController
       render :new
     end
   end
-
+  
   def edit
+    @camera = Camera.find(params[:id])
   end
 
   def update
+    @camera = Camera.find(params[:id])
+    @camera.update(camera_params)
+    redirect_to cameras_path
   end
 
   def destroy
+    @camera = Camera.find(params[:id])
+    @camera.destroy
+    redirect_to cameras_path
   end
 
   private
