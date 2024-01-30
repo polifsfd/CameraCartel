@@ -7,3 +7,20 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts "Clean database"
+Camera.destroy_all
+
+puts "Creating seeds"
+
+nikon = {name: "Nikon fm2n", details: "A great film camera from the 80s", category: "Film cameras", price: 20.00, year: 1987, model: "fm2n", user_id: 1}
+canon = {name: "Canon AE", details: "A great film camera from the 90s", category: "Film cameras", price: 20.00, year: 1982, model: "AE", user_id: 1}
+minolta = {name: "Minolta SR", details: "A great film camera from the 80s", category: "Film cameras", price: 20.00, year: 1985, model: "SR", user_id: 1}
+
+
+[nikon, canon, minolta].each do |attributes|
+  camera = Camera.create!(attributes)
+  puts "Created #{camera.name}"
+end
+
+
+puts "Seeds created!"
