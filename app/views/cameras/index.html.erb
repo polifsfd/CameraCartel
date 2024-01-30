@@ -1,1 +1,9 @@
 <h1>Title</h1>
+
+<ul>
+  <% @cameras.each do |camera| %>
+    <li>
+      <%= camera.name %>
+    </li>
+  <% end %>
+</ul>
