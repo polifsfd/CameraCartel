@@ -1,8 +1,10 @@
 <h1><%= @camera.name %></h1>
-<h3><%= @camera.category %></h3>
-<%= @camera.price %><br>
+<h4><%= @camera.category %></h4>
 <%= @camera.model %> <br>
 <%= @camera.year %> <br>
 <%= @camera.details %><br>
+<br>
+<h6>Rent me for: $<%= @camera.price %>/day</h6><br>
 
-<%= link_to "Go back to overview", cameras_path %>
+<%= link_to "Go back to overview", cameras_path, class: 'btn btn-primary' %>
+<%= link_to "Book this camera", new_camera_booking_path(@camera), class: 'btn btn-primary' %>
