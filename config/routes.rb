@@ -4,7 +4,13 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :cameras
-  resources :bookings
+
+  resources :bookings do
+    member do
+      put :approve
+      put :deny
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -13,6 +19,5 @@ Rails.application.routes.draw do
   get "/cameras/:id/edit", to: "cameras#edit"
 
   # Defines the root path route ("/")
-
   # root "posts#index"
 end
