@@ -1,24 +1,13 @@
 class BookingsController < ApplicationController
-
-  #def edit
-    #@booking = Booking.find(params[:id])
-  #end
-
-  #def update
-    #@booking = Booking.find(params[:id])
-    #@booking.update(booking_params)
-    #redirect_to cameras_path
-  #end
-
   before_action :set_booking, only: [:show, :edit, :update, :approve, :deny]
-  
+
   def index
     @bookings = Booking.all
   end
 
   def show
   end
-    
+
   def new
    @booking = Booking.new
   end
@@ -33,22 +22,23 @@ class BookingsController < ApplicationController
     end
   end
 
-  def approve
-    @booking.update(status: 'approved')
-    redirect_to @booking, notice: 'Booking was successfully approved.'
+  def edit
+    @booking = Booking.find(params[:id])
   end
 
-  def deny
-    @booking.update(status: 'denied')
-    redirect_to @booking, notice: 'Booking was successfully denied.'
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to cameras_path
   end
+
 
   private
-    
+
   def set_booking
     @booking = Booking.find(params[:id])
   end
-  
+
   def booking_params
     params.require(:booking).permit(:start_date, :finish_date)
 end
