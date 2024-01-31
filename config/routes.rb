@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :cameras
-
   resources :bookings do
     member do
       put :approve
