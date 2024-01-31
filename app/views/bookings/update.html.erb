@@ -4,6 +4,6 @@
 <p><strong>From User:</strong> <%= @booking.user.first_name %> <%= @booking.user.last_name %></p>
 
 <% if @booking.status == true %>
-  <%= link_to "Approve", booking_path(@booking)%>
-  <%= link_to "Deny", booking_path(@booking.update), method: :put %>
+  <%= link_to "Approve", cameras_path %>
+  <%= link_to "Deny", booking_path(@booking, status: "false"), method: :patch %>
 <% end %>
