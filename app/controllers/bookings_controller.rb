@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
   end
 
   def new
-   @booking = Booking.new
+    @booking = Booking.new
   end
 
   def create
@@ -32,7 +32,13 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update(booking_params)
+    if params[:status] == "false"
+      @booking.update(status: false)
+    elsif params[:status] == "true"
+      @booking.update(status: true)
+    else
+      @booking.update(booking_params)
+    end
     redirect_to cameras_path
   end
 

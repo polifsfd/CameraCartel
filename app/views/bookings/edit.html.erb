@@ -1,0 +1,8 @@
+<h1>Booking Details</h1>
+
+<p><strong>For Camera:</strong> Booking n<%= @booking.id %> </p>
+<p><strong>From User:</strong> <%= @booking.user.first_name %> <%= @booking.user.last_name %></p>
+
+
+<%= link_to "Approve", booking_path(@booking, status: "true"), data: {turbo_method: :patch} %>
+<%= link_to "Deny", booking_path(@booking, status: "false"), data: {turbo_method: :patch} %>

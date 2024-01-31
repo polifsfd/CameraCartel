@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :cameras do
-    resources :bookings
+    resources :bookings, only: [:create, :new]
   end
+  resources :bookings, only: [:edit, :update]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
