@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :approve, :deny]
+  before_action :set_booking, only: [:show, :edit, :update]
 
   def index
     @bookings = Booking.all
@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user
+    @booking.camera = @camera
     if @booking.save
       redirect_to camera_path(@camera)
     else
