@@ -1,4 +1,3 @@
-
 <h1>All cameras</h1>
   <ul>
   <% @cameras.each do |camera| %>
@@ -7,3 +6,5 @@
     </li>
   <% end %>
 </ul>
+
+<%= link_to "Add a camera", new_camera_path(@camera), class: 'btn btn-primary' %>
