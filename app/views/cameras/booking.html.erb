@@ -1,0 +1,9 @@
+<h1>Booking Details</h1>
+
+<p><strong>For Camera:</strong> Booking n-<%= @booking.id %> for <%= @camera.name %></p>
+<p><strong>From User:</strong> <%= @booking.user.first_name %> <%= @booking.user.last_name %></p>
+
+<% if @booking.status == true %>
+  <%= link_to "Approve", approve_booking_path(@booking), method: :put %>
+  <%= link_to "Deny", deny_booking_path(@booking), method: :put %>
+<% end %>
