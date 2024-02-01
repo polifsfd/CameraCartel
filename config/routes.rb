@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  get 'bookings/index'
-  get 'bookings/show'
   devise_for :users
   root to: "pages#home"
+  get 'dashboard', to: 'dashboard#index'
+  get 'bookings/index'
+  get 'bookings/show'
+
+
+
+
+
   resources :cameras do
     resources :bookings, only: [:create, :new]
   end
