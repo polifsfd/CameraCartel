@@ -9,8 +9,21 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 100px;
+.navbar-brand img {
+  margin-right: auto;
+  margin-left: 50px;
+  width: 200px;
+  height: 200px;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.search-border {
+  border-radius: 11px;
 }
 
 .nav-link {
@@ -22,6 +35,10 @@
 .container-fluid {
   display: flex;
   align-items: center;
+}
+
+.form-control {
+  max-width: 800px;
 }
 
 .user-login {
@@ -52,5 +69,38 @@
 @media (min-width: 768px) {
   .user-login {
     padding: 10px 50px 10px 50px;
+  }
+}
+
+.search-btn {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  background-color: white;
+  cursor: pointer;
+  border: 3px solid;
+  border-radius: 10px;
+  padding: 5px 25px 5px 25px;
+  margin-right: 50px;
+  margin-bottom: 10px;
+  box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.search-btn:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  right: 5px;
+}
+
+@media (min-width: 768px) {
+  .search-btn {
+    padding: 5px 25px 5px 25px;
   }
 }
