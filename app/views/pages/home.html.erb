@@ -1,4 +1,9 @@
-<h1>Pages#home</h1>
+<h1>Camera Cartel</h1>
+
+<% @categories.each do |category| %>
+<%= link_to category, categories_path(category) %>
+<% end %>
+<br>
 <ul>
   <% @cameras.each do |camera| %>
     <li>
