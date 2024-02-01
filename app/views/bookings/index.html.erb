@@ -1,2 +1,19 @@
-<h1>Bookings#index</h1>
+<h1>My Bookings</h1>
 
+<% @bookings.each do |booking| %>
+  <p>Booking n*<%= booking.id %></p>
+  <p><%= booking.camera.name %></p>
+  <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
+  <p>From <%= booking.start_date %></p>
+  <p>To <%= booking.finish_date %></p>
+<% end %>
+
+<h2>My booked cameras</h2>
+
+<% @bookings_as_owner.each do |booking| %>
+  <p>Booking n*<%= booking.id %></p>
+  <p><%= booking.camera.name %></p>
+  <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
+  <p>From <%= booking.start_date %></p>
+  <p>To <%= booking.finish_date %></p>
+<% end %>
