@@ -3,5 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @cameras = Camera.all
+    @categories = Category.all
+    @categories = Camera.pluck(:category).uniq
   end
 end

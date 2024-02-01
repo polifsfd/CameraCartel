@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   get 'bookings/index'
   get 'bookings/show'
 
-
-
   resources :cameras do
     resources :bookings, only: [:create, :new]
   end
