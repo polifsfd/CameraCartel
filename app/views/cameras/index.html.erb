@@ -1,10 +1,23 @@
-<h1>All cameras</h1>
-  <ul>
-  <% @cameras.each do |camera| %>
-    <li>
-      <%= link_to camera.name, camera_path(camera) %> <br>
-    </li>
-  <% end %>
-</ul>
+<div class="camera-index-flex">
+  <div class="cat-list">
+  <%= link_to "Category", new_user_session_path, class: "cat-btn" %>
+  <%= link_to "Category", new_user_session_path, class: "cat-btn" %>
+  <%= link_to "Category", new_user_session_path, class: "cat-btn" %>
+  <%= link_to "Category", new_user_session_path, class: "cat-btn" %>
+  <%= link_to "Category", new_user_session_path, class: "cat-btn" %>
+  <%= link_to "Category", new_user_session_path, class: "cat-btn" %>
+  </div>
+  <div class="cameras-container">
+    <ul class="cameras-cards cameras-box">
+      <% @cameras.each do |camera| %>
+        <li>
+          <%= cl_image_tag("yhrlvqrhrualnbvnfnu1", class:"cameras-img")%>
+          <%= link_to camera.name, camera_path(camera), class:"cameras-name"%>
+          <%= link_to camera.price, camera_path(camera), class:"cameras-price"%>€ <br>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
-<%= link_to "Add a camera", new_camera_path(@camera), class: 'btn btn-primary' %>
+<%#<%= link_to "Add a camera", new_camera_path(@camera), class: 'btn btn-primary' %>

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'bookings/index'
   get 'bookings/show'
   devise_for :users
-  root to: "pages#home"
+  root to: "cameras#index"
   resources :cameras do
     resources :bookings, only: [:create, :new]
   end
