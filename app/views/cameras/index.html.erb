@@ -1,7 +1,7 @@
 <div class="camera-index-flex">
   <div class="cat-list">
   <% @categories.each do |category| %>
-    <%= link_to "Category", categories_path(category), class: "cat-btn" %>
+    <%= link_to category, categories_path(category), class: "cat-btn" %>
   <% end %>
   </div>
   <div class="cameras-container">
