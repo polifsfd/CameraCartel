@@ -85,6 +85,7 @@
 .cameras-name {
   font-size: 16px;
   font-weight: bold;
+  margin: 16px;
   color: #000;
   text-decoration: none;
 }
@@ -92,14 +93,11 @@
 .cameras-price {
   font-size: 16px;
   font-weight: bold;
+  margin: 16px;
   color: #000;
   text-decoration: none;
-  margin-left: auto;
-}
-
-.cameras-info {
-  display: flex;
-  align-items: baseline;
+  align-content: flex-end;
+  justify-content: flex-end;
 }
 
 .cameras-box li {
@@ -111,8 +109,6 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
 }
 
 .cameras-box li:hover {
