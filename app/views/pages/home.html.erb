@@ -1,2 +1,8 @@
 <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<ul>
+  <% @cameras.each do |camera| %>
+    <li>
+      <%= link_to camera.name, camera_path(camera) %> <br>
+    </li>
+  <% end %>
+</ul>
