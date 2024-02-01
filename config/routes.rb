@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-
   devise_for :users
-
-  root to: "pages#home"
+  root to: "cameras#index"
 
   get 'dashboard', to: 'dashboard#index'
   get 'profiles', to: 'profiles#update'
@@ -10,10 +8,11 @@ Rails.application.routes.draw do
   get 'bookings/index'
   get 'bookings/show'
 
+
   resources :cameras do
     resources :bookings, only: [:create, :new]
   end
-  resources :bookings, only: [:edit, :update]
+  resources :bookings, only: [:edit, :update, :index]
   resources :categories, only: [:index]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
