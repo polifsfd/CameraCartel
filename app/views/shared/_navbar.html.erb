@@ -1,8 +1,15 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
+    <div>
     <%= link_to root_path ,class: "navbar-brand" do %>
-      <%= image_tag "https://thumbs.dreamstime.com/b/temporary-rubber-stamp-temporary-rubber-stamp-grunge-design-dust-scratches-effects-can-be-easily-removed-clean-crisp-101635723.jpg" %>
+      <%= cl_image_tag "yhrlvqrhrualnbvnfnu1" %>
     <% end %>
+    </div>
+
+    <form class="d-flex flex-grow-1 justify-content-center">
+      <input class="form-control me-2 search-border" type="search" placeholder="Search" aria-label="Search">
+      <button class="search-btn" type="submit">Search</button>
+    </form>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
