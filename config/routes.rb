@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :cameras do
     resources :bookings, only: [:create, :new]
   end
-  resources :bookings, only: [:edit, :update]
+  resources :bookings, only: [:edit, :update, :index]
   resources :categories, only: [:index]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

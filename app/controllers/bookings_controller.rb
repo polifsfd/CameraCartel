@@ -3,9 +3,12 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update]
   before_action :set_camera, only: [:new, :create]
 
+  before_action :authenticate_user!
+
   def index
-    @bookings = Booking.all
-    #@bookings = current_user.bookings
+    #@bookings = Booking.all
+    @bookings = current_user.bookings
+    @bookings_as_owner = current_user.bookings_as_owner
   end
 
   def show
