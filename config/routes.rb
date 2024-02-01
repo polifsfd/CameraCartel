@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+
   devise_for :users
+
   root to: "pages#home"
+
   get 'dashboard', to: 'dashboard#index'
+  get 'profiles', to: 'profiles#update'
+
   get 'bookings/index'
   get 'bookings/show'
-
-
 
 
 
