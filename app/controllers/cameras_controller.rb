@@ -3,6 +3,7 @@ class CamerasController < ApplicationController
 
   def index
     @cameras = Camera.all
+    @categories = Camera.pluck(:category).uniq
   end
 
   def show

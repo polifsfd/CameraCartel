@@ -1,0 +1,13 @@
+<h1>List of all categories' cameras</h1>
+
+<ul>
+<% @category.each do |category| %>
+<li>
+<%= link_to category.name, camera_path(category) %>
+</li>
+<% end %>
+</ul>
+
+
+
+<%= link_to "Go back to homepage", cameras_path(@cameras), class: 'btn btn-primary' %>
