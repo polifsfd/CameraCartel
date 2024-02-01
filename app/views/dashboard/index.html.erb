@@ -1,6 +1,37 @@
-<h1>Hello <%= @user.first_name %></h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<h1>Hello <%= @user.first_name %>!</h1>
 
-<h3><%= link_to "My Bookings", bookings_path %></h3>
-
-<%= link_to "Add new camera", new_camera_path(@camera), class: 'btn btn-primary'%>
+<div class="cameras">
+  <h1>My Cameras</h1>
+  <% @cameras.each do |camera| %>
+    <div class="camera">
+      <%= camera.name %>
+    </div>
+  <% end %>
+  <%= link_to "Add new camera", new_camera_path(@camera), class: 'btn btn-primary'%>
+</div>
+<br>
+<div class="container">
+  <h1>My Bookings</h1>
+  <div class="bookings">
+    <% @bookings.each do |booking| %>
+      <p>Booking reference number: <%= booking.id %></p>
+      <p>Camera: <%= booking.camera.name %></p>
+      <p>Owner: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+      <p>From <%= booking.start_date %></p>
+      <p>To <%= booking.finish_date %></p>
+    <% end %>
+  </div>
+</div>
+<br>
+<div class="container">
+  <h1>My Booked Cameras</h1>
+  <div class="bookings">
+    <% @bookings_as_owner.each do |booking| %>
+      <p>Booking reference number: <%= booking.id %></p>
+      <p>Camera: <%= booking.camera.name %></p>
+      <p>User: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+      <p>From <%= booking.start_date %></p>
+      <p>To <%= booking.finish_date %></p>
+    <% end %>
+  </div>
+</div>
