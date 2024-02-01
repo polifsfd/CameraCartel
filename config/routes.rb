@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
   devise_for :users
-
-  root to: "pages#home"
+  root to: "cameras#index"
 
   get 'dashboard', to: 'dashboard#index'
   get 'profiles', to: 'profiles#update'
 
   get 'bookings/index'
   get 'bookings/show'
+
 
   resources :cameras do
     resources :bookings, only: [:create, :new]

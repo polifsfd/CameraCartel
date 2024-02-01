@@ -1,15 +1,19 @@
-<h1>All cameras</h1>
-
-<% @categories.each do |category| %>
-<%= link_to category, categories_path(category) %>
-<% end %>
-
-  <ul>
-  <% @cameras.each do |camera| %>
-    <li>
-      <%= link_to camera.name, camera_path(camera) %> <br>
-    </li>
+<div class="camera-index-flex">
+  <div class="cat-list">
+  <% @categories.each do |category| %>
+    <%= link_to "Category", categories_path(category), class: "cat-btn" %>
   <% end %>
-</ul>
-
-<%= link_to "Add a camera", new_camera_path(@camera), class: 'btn btn-primary' %>
+  </div>
+  <div class="cameras-container">
+    <ul class="cameras-cards cameras-box">
+      <% @cameras.each do |camera| %>
+        <li>
+          <%= cl_image_tag("yhrlvqrhrualnbvnfnu1", class:"cameras-img")%>
+          <%= link_to camera.name, camera_path(camera), class:"cameras-name"%>
+          <%= link_to camera.price, camera_path(camera), class:"cameras-price"%>€ <br>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<%#<%= link_to "Add a camera", new_camera_path(@camera), class: 'btn btn-primary' %>
