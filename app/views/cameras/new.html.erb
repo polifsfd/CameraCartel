@@ -1,7 +1,7 @@
 <%= simple_form_for @camera do |f| %>
   <%= f.input :name %>
   <%= f.input :details %>
-  <%= f.input :category %>
+  <%= f.input :category, collection: Camera::CATEGORIES %>
   <%= f.input :price %>
   <%= f.input :year %>
   <%= f.input :model %>
