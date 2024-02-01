@@ -1,9 +1,11 @@
 class CategoriesController < ApplicationController
   def index
-    @category = Camera.where(category: params[:format])
+    @cameras = Camera.where(category: params[:format])
+    @category = params[:format]
   end
 
-  #def show
-    #@camera = Camera.find(params[:category])
-  #end
+  def show
+    @cameras = Camera.where(category: params[:format])
+    @category = params[:format]
+  end
 end
