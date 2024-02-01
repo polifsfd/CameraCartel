@@ -6,5 +6,6 @@
 <br>
 <h6>Rent me for: $<%= @camera.price %>/day</h6><br>
 
-<%= link_to "Go back to overview", cameras_path, class: 'btn btn-primary' %>
 <%= link_to "Book this camera", new_camera_booking_path(@camera), class: 'btn btn-primary' %>
+<%= link_to "Go back to category", categories_path(@camera.category), class: 'btn btn-primary' %>
+<%= link_to "Go back to overview", cameras_path, class: 'btn btn-primary' %>

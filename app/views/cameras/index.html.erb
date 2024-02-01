@@ -1,4 +1,9 @@
 <h1>All cameras</h1>
+
+<% @categories.each do |category| %>
+<%= link_to category, categories_path(category) %>
+<% end %>
+
   <ul>
   <% @cameras.each do |camera| %>
     <li>
