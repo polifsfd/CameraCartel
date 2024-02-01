@@ -1,2 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Camera Cartel</h1>
+
+<% @categories.each do |category| %>
+<%= link_to category, categories_path(category) %>
+<% end %>
+<br>
+<ul>
+  <% @cameras.each do |camera| %>
+    <li>
+      <%= link_to camera.name, camera_path(camera) %> <br>
+    </li>
+  <% end %>
+</ul>

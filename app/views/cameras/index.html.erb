@@ -1,11 +1,8 @@
 <div class="camera-index-flex">
   <div class="cat-list">
-  <%= link_to "Category", new_user_session_path, class: "cat-btn" %>
-  <%= link_to "Category", new_user_session_path, class: "cat-btn" %>
-  <%= link_to "Category", new_user_session_path, class: "cat-btn" %>
-  <%= link_to "Category", new_user_session_path, class: "cat-btn" %>
-  <%= link_to "Category", new_user_session_path, class: "cat-btn" %>
-  <%= link_to "Category", new_user_session_path, class: "cat-btn" %>
+  <% @categories.each do |category| %>
+    <%= link_to "Category", categories_path(category), class: "cat-btn" %>
+  <% end %>
   </div>
   <div class="cameras-container">
     <ul class="cameras-cards cameras-box">
@@ -19,5 +16,4 @@
     </ul>
   </div>
 </div>
-
 <%#<%= link_to "Add a camera", new_camera_path(@camera), class: 'btn btn-primary' %>
