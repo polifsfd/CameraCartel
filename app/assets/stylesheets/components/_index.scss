@@ -30,13 +30,51 @@
   text-decoration: none;
   text-transform: uppercase;
   color: #000;
-  background-color: white;
+  background-color: #C7C8CC;
   cursor: pointer;
   border: 3px solid;
   border-radius: 10px;
   padding: 10px 50px;
   margin-right: 50px;
   box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.cat-btn-small {
+  font-family: "Open Sans", sans-serif;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  background-color: white;
+  cursor: pointer;
+  border: 3px solid;
+  border-radius: 10px;
+  padding: 10px 50px 10px 50px;
+  margin-right: 50px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.cat-btn-category {
+  font-family: "Open Sans", sans-serif;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  background-color: white;
+  cursor: pointer;
+  border: 3px solid;
+  border-radius: 10px;
+  padding: 10px 50px 10px 50px;
+  margin-right: 50px;
   position: relative;
   user-select: none;
   -webkit-user-select: none;
@@ -218,4 +256,8 @@
 
 .cat-btn-cut {
   margin-bottom: 15px;
+
+.cameras-container img {
+  width: 100%;
+
 }
