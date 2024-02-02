@@ -4,6 +4,9 @@ class CamerasController < ApplicationController
   def index
     @cameras = Camera.all
     @categories = Camera.pluck(:category).uniq
+    if params[:query].present?
+      @cameras = Camera.where("name ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show

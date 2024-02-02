@@ -5,11 +5,10 @@
       <%= cl_image_tag "yhrlvqrhrualnbvnfnu1" %>
     <% end %>
     </div>
-
-    <form class="d-flex flex-grow-1 justify-content-center">
-      <input class="form-control me-2 search-border" type="search" placeholder="Search" aria-label="Search">
-      <button class="search-btn" type="submit">Search</button>
-    </form>
+    <%= form_tag cameras_path, method: :get, class: 'd-flex flex-grow-1 justify-content-center' do %>
+      <%= text_field_tag :query, params[:query], placeholder: "Search for a camera", class: "form-control me-2 search-border" %>
+      <%= submit_tag "Search", class: "search-btn" %>
+    <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -36,3 +35,4 @@
     </div>
   </div>
 </div>
+
