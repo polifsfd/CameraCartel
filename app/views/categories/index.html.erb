@@ -1,13 +1,15 @@
 <h1> <%= @category %></h1>
-
-<ul>
-<% @cameras.each do |camera| %>
-<li>
-<%= link_to camera.name, camera_path(camera) %>
-</li>
-<% end %>
-</ul>
-
-
-
-<%= link_to "Go back to homepage", root_path, class: 'btn btn-primary' %>
+<div class="cameras-container">
+  <ul class="cameras-cards cameras-box">
+    <% @cameras.each do |camera| %>
+      <li>
+        <img src="<%= camera.picture_url %>" alt="">
+        <div class="cameras-info">
+          <%= link_to camera.name, camera_path(camera), class:"cameras-name"%>
+          <%= link_to camera.price, camera_path("#"), class:"cameras-price"%>€ <br>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to "Go back to homepage", root_path, class: 'btn btn-primary' %>
+</div>

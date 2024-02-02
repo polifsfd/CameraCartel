@@ -37,7 +37,7 @@ class CamerasController < ApplicationController
   def destroy
     @camera = Camera.find(params[:id])
     @camera.destroy
-    redirect_to cameras_path
+    redirect_to dashboard_path
   end
 
   private
