@@ -55,11 +55,15 @@
   border: 3px solid;
   border-radius: 10px;
   padding: 10px 50px 10px 50px;
-  margin-right: 50px;
+  margin-right: 60px;
   position: relative;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+
+.button-left {
+  margin-left: 3px,
 }
 
 .cat-btn-category {
@@ -107,7 +111,7 @@
 
 .cameras-cards {
   display: flex;
-  align-content: center;
+  align-content: space-between;
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
@@ -134,6 +138,7 @@
 .cameras-info {
   display: flex;
   align-items: baseline;
+  margin-top: auto;
 }
 
 .cameras-box li {
@@ -265,3 +270,7 @@
 }
 
 
+.picture-look {
+  border-radius: 5%;
+  margin-right: 50px;
+}
