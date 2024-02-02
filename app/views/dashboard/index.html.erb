@@ -6,7 +6,7 @@
     <ul class="cameras-cards cameras-box">
       <% @cameras.each do |camera| %>
         <li>
-          <img src="<%= camera.picture_url %>" alt="">
+          <%= cl_image_tag(camera.picture.key, :height=>200, :width=>200, :crop=>"fill") %>
           <div class="cameras-info">
             <%= link_to camera.name, camera_path(camera), class:"cameras-name"%>
             <%= link_to camera.price, camera_path("#"), class:"cameras-price"%>€ <br>
@@ -21,37 +21,46 @@
     <%= link_to "Add a camera", new_camera_path(@camera), class: 'cat-btn cat-btn-cut btn-centered' %>
   </div>
 
-  <div class="bookings-container list-type-row">
-    <h1 class="container text-center">My Bookings</h1>
-    <ul class="cameras-cards cameras-box">
+  <div class="bookings">
+    <div class="bookings-container list-type-row">
+      <h1 class="container text-center">My Booked Cameras</h1>
       <% @bookings.each do |booking| %>
-        <li>
-          <div class="card-body">
-            <h5 class="card-title">Booking reference number: <%= booking.id %></h5>
-            <p class="card-text">Camera: <%= booking.camera.name %></p>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <%= cl_image_tag(booking.camera.picture.key, :height=>180, :width=>180, :crop=>"fill") %>
+          </div>
+          <div class="col-md-8">
+            <h5 class="card-title"><strong><%= booking.camera.name %> <%= booking.camera.model %></strong></h5>
             <p class="card-text">Owner: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
             <p class="card-text">From: <%= booking.start_date %></p>
             <p class="card-text">To: <%= booking.finish_date %></p>
+            <p class="card-text"><small class="text-muted">Booking reference number: <%= booking.id %></small></p>
           </div>
-        </li>
+        </div>
+      </div>
       <% end %>
-    </ul>
-  </div>
+    </div>
 
-  <div class="bookings-container list-type-row">
-    <h1 class="container text-center">My Booked Cameras</h1>
-    <ul class="cameras-cards cameras-box">
-      <% @bookings_as_owner.each do |booking| %>
-        <li>
-          <div class="card-body">
-            <h5 class="card-title">Booking reference number: <%= booking.id %></h5>
-            <p class="card-text">Camera: <%= booking.camera.name %></p>
-            <p class="card-text">User: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-            <p class="card-text">From: <%= booking.start_date %></p>
-            <p class="card-text">To: <%= booking.finish_date %></p>
+
+    <div class="bookings-container list-type-row">
+        <h1 class="container text-center">My Bookings</h1>
+        <% @bookings_as_owner.each do |booking| %>
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <%= cl_image_tag(booking.camera.picture.key, :height=>180, :width=>180, :crop=>"fill") %>
+            </div>
+            <div class="col-md-8">
+              <h5 class="card-title"><strong><%= booking.camera.name %> <%= booking.camera.model %></strong></h5>
+              <p class="card-text">User: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+              <p class="card-text">From: <%= booking.start_date %></p>
+              <p class="card-text">To: <%= booking.finish_date %></p>
+              <p class="card-text"><small class="text-muted">Booking reference number: <%= booking.id %></small></p>
+            </div>
           </div>
-        </li>
-      <% end %>
-    </ul>
+        </div>
+        <% end %>
+    </div>
   </div>
 </div>
