@@ -16,3 +16,56 @@
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
 }
+
+.camera-details-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Center horizontally
+  justify-content: center; // Center vertically
+}
+
+.camera-details {
+  display: flex;
+  flex-direction: row; /* Arrange items in a column */
+  align-items: center;
+  padding: 20px;
+  padding-top: 0px;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.camera-name {
+  margin-top: 20px;
+  width: auto;
+}
+
+.camera-details img {
+  margin-bottom: 20px; /* Add spacing between the image and the text below */
+  width: 300px;
+}
+
+.camera-details h1 {
+  text-align: center;
+}
+
+.camera-details .details-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+}
+
+.camera-details .details-right h4,
+.camera-details .details-right p,
+.camera-details .details-right h6 {
+  text-align: left; /* Align text to the left */
+  margin: 0; /* Remove default margins */
+}
+
+
+.link-buttons {// Set a fixed width for the buttons container
+  padding: 20px;
+  display: flex;
+  justify-content: space-between; // Distribute space between buttons horizontally
+  align-items: flex-end;
+}
