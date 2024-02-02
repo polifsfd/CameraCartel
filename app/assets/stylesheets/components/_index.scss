@@ -36,7 +36,6 @@
   border: 3px solid;
   border-radius: 10px;
   padding: 10px 50px;
-  margin-right: 50px;
   box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px;
   position: relative;
   user-select: none;
@@ -75,7 +74,6 @@
   border: 3px solid;
   border-radius: 10px;
   padding: 10px 50px 10px 50px;
-  margin-right: 50px;
   position: relative;
   user-select: none;
   -webkit-user-select: none;
@@ -101,9 +99,9 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   justify-content: space-around;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   margin-top: 10px;
 }
 
