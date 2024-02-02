@@ -1,13 +1,13 @@
 <h1>Edit Camera</h1>
 
-<%= form_for @camera do |f| %>
-  <div>
-    <%= f.text_field :name %><br>
-    <%= f.text_area :details %><br>
-    <%= f.text_field :year %><br>
-    <%= f.text_area :model %><br>
-    <%= f.text_area :category %><br>
-    <%= f.text_field :price %>
+<%= simple_form_for @camera do |f| %>
+  <div class="form-group">
+    <%= f.input :name %><br>
+    <%= f.input :details %><br>
+    <%= f.input :year %><br>
+    <%= f.input :model %><br>
+    <%= f.input :category %><br>
+    <%= f.input :price %>
   </div>
 
   <div>
