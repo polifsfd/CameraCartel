@@ -7,6 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require "open-uri"
+
 puts "Clean database"
 Camera.destroy_all
 User.destroy_all
@@ -33,12 +35,18 @@ camera10 = {name: "Panasonic Lumix FZ300", details: "Bridge camera, fast and eff
 camera11 = {name: "Sony A7 IV", details: "The best mirrorless camera, full-frame with a 33MP resolution and 4k video recording capacity - 24-36mm 2.8 lens", category: "Mirrorless", price: 45.00, year: 2023, model: "A7 IV", picture_url: "https://cdn.mos.cms.futurecdn.net/99Y5TFcsFbKuRP7jyS9SiS-970-80.jpg.webp", user: user2}
 camera12 = {name: "Canon EOS R7", details: "The best compact mirrorless camera with a 32MP resolution and 4k video recording capacity - 18-55mm 2.4 lens", category: "Mirrorless", price: 20.00, year: 2022, model: "EOS R7", picture_url: "https://cdn.mos.cms.futurecdn.net/4yqrdYLnAqmMmrjJRZGCzG-970-80.jpg.webp", user: user3}
 
-
-
 [camera1, camera2, camera3, camera4, camera5, camera6,camera7, camera8, camera9, camera10, camera11, camera12].each do |attributes|
-  camera = Camera.create!(attributes)
+  file = URI.open(attributes[:picture_url])
+  camera = Camera.new(attributes)
+  camera.picture.attach(io: file, filename: "#{attributes[:name]}.png", content_type: "image/png")
+  camera.save
   puts "Created #{camera.name}"
 end
 
 
 puts "Seeds created!"
+
+
+#article = Article.new(title: "NES", body: "A great console")
+#article.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+#article.save
