@@ -1,13 +1,18 @@
-<h1><%= @camera.name %></h1>
-<img src=<%= @camera.picture_url %> alt="">
-<h4><%= @camera.category %></h4>
-<%= @camera.model %> <br>
-<%= @camera.year %> <br>
-<%= @camera.details %><br>
-<br>
-<h6>Rent me for: $<%= @camera.price %>/day</h6><br>
-
-<%= link_to "Book this camera", new_camera_booking_path(@camera), class: 'btn btn-primary' %>
-<%= link_to "Go back to category", categories_path(@camera.category), class: 'btn btn-primary' %>
-<%= link_to "Go back to homepage", root_path, class: 'btn btn-primary' %>
-
+<div class="camera-details-flex">
+    <h1 class="camera-name"><%= @camera.name %> | <%= @camera.model %></h1>
+  <div class="camera-details">
+    <%= cl_image_tag("yhrlvqrhrualnbvnfnu1")%>
+    <div class="details-right">
+      <h4><%= @camera.category %></h4>
+      <p><%= @camera.year %></p> <br>
+      <p><%= @camera.details %></p> <br>
+      <br>
+      <h6>Rent me for: <%= @camera.price %>€/day</h6><br>
+    </div>
+  </div>
+  <div class="link-buttons">
+    <%= link_to "Book this camera", new_camera_booking_path(@camera), class: 'cat-btn' %>
+    <%= link_to "Go back to category", categories_path(@camera.category), class: 'cat-btn' %>
+    <%= link_to "Go back to homepage", root_path, class: 'cat-btn' %>
+  </div>
+</div>
