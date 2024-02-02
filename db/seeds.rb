@@ -7,6 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require "open-uri"
+
 puts "Clean database"
 Camera.destroy_all
 User.destroy_all
@@ -26,9 +28,17 @@ camera4 = {name: "Nikon D80", details: "A great digital camera from early 2000s 
 
 
 [camera1, camera2, camera3, camera4].each do |attributes|
-  camera = Camera.create!(attributes)
+  file = URI.open(attributes[:picture_url])
+  camera = Camera.new(attributes)
+  camera.picture.attach(io: file, filename: "#{attributes[:name]}.png", content_type: "image/png")
+  camera.save
   puts "Created #{camera.name}"
 end
 
 
 puts "Seeds created!"
+
+
+#article = Article.new(title: "NES", body: "A great console")
+#article.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+#article.save
